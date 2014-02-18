@@ -11,7 +11,9 @@
 				if (navType === jQuery.sap.history.NavType.Back) {
 					this.navBack();
 				} else {
-					this.navTo(null, null, false);
+					// Need to provide some defaults - this will be executed when
+					// navType is "_bookmark". Just navigate to the home page.
+					this.navTo("idViewRoot--idViewHome", {}, false);
 				}
 			};
 
@@ -27,6 +29,12 @@
 				}
 			};
 
+			this.app = this.getView().byId("idApp");
+
+			bus.subscribe("nav", "to", this.navHandler, this);
+			bus.subscribe("nav", "back", this.navHandler, this);
+			bus.subscribe("nav", "virtual", this.navHandler, this);
+
 			jQuery.sap.history({
 				routes: [{
 					path: "detailPage",
@@ -34,12 +42,6 @@
 				}],
 				defaultHandler: jQuery.proxy(historyDefaultHandler, this)
 			});
-
-			bus.subscribe("nav", "to", this.navHandler, this);
-			bus.subscribe("nav", "back", this.navHandler, this);
-			bus.subscribe("nav", "virtual", this.navHandler, this);
-
-			this.app = this.getView().byId("idApp");
 		},
 
 		navHandler: function(channelId, eventId, data) {

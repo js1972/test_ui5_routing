@@ -11,7 +11,7 @@
 			this.bus.publish("nav", "to", {
 				id: "idViewRoot--idViewDetail",
 				data: {
-					context: evt.getSource().getBindingContext().sPath    //added .sPath
+					context: evt.getSource().getBindingContext().sPath    //added .sPath for routing
 				}
 			});
 		},
