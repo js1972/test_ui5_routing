@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>tiles</title>
+
+		<script id="sap-ui-bootstrap"
+				src="https://openui5.netweaver.ondemand.com/resources/sap-ui-core.js"
+				data-sap-ui-theme="sap_bluecrystal"
+				data-sap-ui-libs="sap.m, sap.ui.layout"
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-resourceroots='{ "sap.ui.demo": "./" }' >
+		</script>
+
+		<!-- *** Enable fake OData service ***
+		These two scripts are provided by UI5 for faking the Northwind sample OData service.
+		Delete them (and enable the proxy as described in Gruntfile.js comments) if you wish
+		to use the real service or another method to mock your calls.
+		-->
+		
+		<script type="text/javascript" src="https://openui5.netweaver.ondemand.com/resources/sap/ui/thirdparty/sinon.js"></script>
+		<script type="text/javascript" src="model/ODataModelFakeService.js"></script>
+
+		<script>
+			new sap.ui.core.ComponentContainer({
+				name: "sap.ui.demo"
+			}).placeAt("content");
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application" id="content">
+	</body>
+</html>
