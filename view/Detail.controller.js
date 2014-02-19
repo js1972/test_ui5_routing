@@ -7,11 +7,19 @@
 	sap.ui.controller("sap.ui.demo.view.Detail", {
 
 		onInit: function() {
-			this.bus = sap.ui.getCore().getEventBus();
+			this.router = sap.ui.core.UIComponent.getRouterFor(this);
+			this.router.attachRoutePatternMatched(this._handleRouteMatched, this);
 		},
 		
+		_handleRouteMatched: function(evt) {
+			if (evt.getParameter("name") === "detail") {
+				var path = "/" + evt.getParameter("arguments").data;
+				this.getView().bindObject(path);
+			}
+		},
+
 		handleNavButtonPress: function() {
-			this.bus.publish("nav", "back");
+			this.router.navTo("home");
 		}
 		
 	});

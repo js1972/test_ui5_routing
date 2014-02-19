@@ -4,16 +4,12 @@
 	sap.ui.controller("sap.ui.demo.view.Home", {
 
 		onInit: function() {
-			this.bus = sap.ui.getCore().getEventBus();
+			this.router = sap.ui.core.UIComponent.getRouterFor(this);
 		},
 
 		handleTileTap: function(evt) {
-			this.bus.publish("nav", "to", {
-				id: "idViewRoot--idViewDetail",
-				data: {
-					context: evt.getSource().getBindingContext().sPath    //added .sPath for routing
-				}
-			});
+			var bindingPath = evt.getSource().getBindingContext().sPath;
+			this.router.navTo("detail", {data: bindingPath.substring(1)});
 		},
 
 		productCount: function(oValue) {

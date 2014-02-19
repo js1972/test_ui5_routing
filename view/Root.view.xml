@@ -10,10 +10,12 @@
 
 	<Shell showLogout="false">
 		<App id="idApp">
+			<!--
 			<pages>
 				<mvc:JSView viewName="sap.ui.demo.view.Home" id="idViewHome" />
 				<mvc:XMLView viewName="sap.ui.demo.view.Detail" id="idViewDetail" />
 			</pages>
+			-->
 		</App>
 	</Shell>
 
