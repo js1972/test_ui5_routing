@@ -1,4 +1,4 @@
-/*global module:false*/
+/*global module:false, require*/
 module.exports = function(grunt) {
 
 	// Project configuration.
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 				base: "."
 			},
 
-			/*
+
 			//=====================================================================
 			//RESOURCE PROXY - un-comment the proxies setting below to configure
 			//a proxy. context, host and changeOrigin are necessary. port defaults
@@ -104,11 +104,9 @@ module.exports = function(grunt) {
 				//}
 			},
 			//=====================================================================
-			*/
 
 			// Requires the Livereload browser extension or a middleware to inject the livereload script
 			livereload: {
-				/*
 				options: {
 					middleware: function(connect, options) {
 						if (!Array.isArray(options.base)) {
@@ -126,7 +124,6 @@ module.exports = function(grunt) {
 						return middlewares;
 					}
 				}
-				*/
 			}
 		}
 	});

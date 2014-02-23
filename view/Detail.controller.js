@@ -19,7 +19,9 @@
 		},
 
 		handleNavButtonPress: function() {
-			this.router.navTo("home");
+			// The nav button is a BACK button so use the bworser history as NavTo is forward navigation!
+			//this.router.navTo("home");
+			window.history.go(-1);
 		}
 		
 	});
