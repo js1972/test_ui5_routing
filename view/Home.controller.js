@@ -9,7 +9,9 @@
 
 		handleTileTap: function(evt) {
 			var bindingPath = evt.getSource().getBindingContext().sPath;
-			this.router.navTo("detail", {data: bindingPath.substring(1)});
+			var crap = bindingPath.replace(/\//g, "!");
+			this.router.navTo("detail", {data: crap});
+			//this.router.navTo("detail", {data: bindingPath.substring(1)});
 		},
 
 		productCount: function(oValue) {

@@ -65,12 +65,15 @@ Component details:
 				}
 			});
 
+			/*
 			// set data model on root view
 			var sURI = "http://localhost:8080/Northwind/Northwind.svc/";
 			if (typeof baseURL === "string") {
 				sURI = baseURL; //if mock service use the baseURL
 			}
 			oView.setModel(new sap.ui.model.odata.ODataModel(sURI, false)); // use XML for the fake request
+			*/
+			oView.setModel(new sap.ui.model.json.JSONModel("model/mock.json"));
 
 			// set device model
 			var deviceModel = new sap.ui.model.json.JSONModel({

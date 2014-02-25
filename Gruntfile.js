@@ -93,6 +93,7 @@ module.exports = function(grunt) {
 			//When not using grunt-connect-proxy you still must have the
 			//livereload target for connect.
 			//
+			/*
 			proxies: {
 				context: "/Northwind",  // When the url contains this...
 				host: "services.odata.org", // Proxy to this host
@@ -103,6 +104,7 @@ module.exports = function(grunt) {
 				//"^/changingcontext": "/anothercontext"
 				//}
 			},
+			*/
 			//=====================================================================
 
 			// Requires the Livereload browser extension or a middleware to inject the livereload script

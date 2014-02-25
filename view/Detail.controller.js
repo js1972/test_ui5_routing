@@ -13,8 +13,21 @@
 		
 		_handleRouteMatched: function(evt) {
 			if (evt.getParameter("name") === "detail") {
-				var path = "/" + evt.getParameter("arguments").data;
-				this.getView().bindObject(path);
+				//var path = "/" + evt.getParameter("arguments").data;
+				var path = evt.getParameter("arguments").data.replace(/!/g, "/");
+
+				//this.getView().bindObject(path);
+				var thisView = this.getView();
+				thisView.getModel().createBindingContext(path, function(bindingCtx) {
+					thisView.setBindingContext(bindingCtx);
+				});
+
+
+				/*
+				sap.ui.getCore().getModel().createBindingContext("/" + oArguments.selectedIndex + "/details", function(oBindingContext) {
+					that.getView().setBindingContext(oBindingContext);
+				});
+				*/
 			}
 		},
 
